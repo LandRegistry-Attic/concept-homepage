@@ -1,0 +1,13 @@
+language: python
+python:
+- '2.7'
+install: pip install -r requirements.txt
+script: python app_tests.py
+deploy:
+  provider: heroku
+  api_key:
+    secure: GamgAC2O+xr5sh8aj8iIOJ6ZOEVSnM6KD0POqx7wvhEjEG1aA/Zcrir1tcZMuxT5J/5ZWtdFVoc5jmlB2JncRR3Ab6sWjYC3hws4IyzPPf5AvSnopOiBoXqF27sCpNiDfHX5F1hKLaLmFmWnL/bL11dKWSJcsxjbJCtMB56tRvo=
+  app: lr-concept-homepage
+  on:
+    repo: LandRegistry/concept-homepage
+  strategy: git
