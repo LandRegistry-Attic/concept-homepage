@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
   <div class="container">
     <div class="page-header">
       <h1>Land Registry Concept</h1>
@@ -7,10 +8,29 @@
     <h2>GOV.UK</h2>
     <ul>
       <li><a href="http://www.gov.uk.landregistryconcept.co.uk">List of properties</a></li>
+      <li>Find properties by postcode: 
+        <input id="code" type="text">
+        <button type="button" onclick="findByPostcode()">Find</button>
+      </li>
     </ul>
     <h2>Internal services</h2>
     <ul>
       <li><a href="http://update-register.service.landregistryconcept.co.uk">Update register</a></li>
     </ul>
   </div>
+
+
+<script>
+function findByPostcode()
+{
+
+  var val = document.getElementById("code").value;
+  window.location = "http://www.gov.uk.landregistryconcept.co.uk/properties?postcode=" + val;
+
+}
+</script>
+{% endblock %}
+
+{% block extra_js %}
+
 {% endblock %}
